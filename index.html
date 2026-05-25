@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mateo acosta-rubio</title>
+  <meta name="description" content="mateo acosta-rubio. co-founder of clave. executive director of letallgirls. miami.">
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:wght@400;500;700&display=swap">
+
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --ink: #111;
+      --ink-secondary: #777;
+      --mono-label: #999;
+      --accent: #d63623;
+      --hairline: #d9d6cf;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Switzer', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      color: var(--ink);
+      background: var(--bg);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    .mono {
+      font-family: 'Intel One Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 11px;
+      color: var(--mono-label);
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* header */
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--hairline);
+    }
+    header.site .row {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    header.site .name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    header.site .meta {
+      font-family: 'Intel One Mono', ui-monospace, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 11px;
+      color: var(--mono-label);
+    }
+
+    /* layout */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 96px 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 48px;
+    }
+
+    .page-of {
+      display: block;
+      margin-top: 64px;
+    }
+
+    /* type */
+    .hero {
+      font-family: 'Switzer', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(32px, 5.5vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px 0;
+      color: var(--ink);
+    }
+
+    .subtitle {
+      font-family: 'Switzer', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.3;
+      color: var(--ink-secondary);
+      margin: 0 0 40px 0;
+      letter-spacing: -0.005em;
+    }
+
+    .lede {
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 60ch;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    h2.section-head {
+      font-family: 'Switzer', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(22px, 3vw, 28px);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin: 0 0 28px 0;
+    }
+
+    h3.sub-head {
+      font-family: 'Switzer', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.2;
+      margin: 0 0 14px 0;
+    }
+
+    p { margin: 0 0 20px 0; }
+    p:last-child { margin-bottom: 0; }
+
+    /* metadata block */
+    dl.meta-block {
+      font-family: 'Intel One Mono', ui-monospace, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 11px;
+      color: var(--ink-secondary);
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      row-gap: 8px;
+      column-gap: 16px;
+      margin: 40px 0 0 0;
+    }
+    dl.meta-block dt {
+      color: var(--mono-label);
+      font-weight: 400;
+    }
+    dl.meta-block dd {
+      margin: 0;
+      color: var(--ink-secondary);
+    }
+    dl.meta-block dd a { color: var(--ink); }
+
+    /* sub-blocks inside section 03 */
+    .block {
+      margin-bottom: 96px;
+    }
+    .block:last-child { margin-bottom: 0; }
+
+    .accent { color: var(--accent); }
+
+    /* portrait */
+    .portrait {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      margin: 64px auto 0 auto;
+    }
+
+    /* footer */
+    footer.site {
+      border-top: 1px solid var(--hairline);
+      padding: 32px 24px;
+      text-align: center;
+      font-family: 'Intel One Mono', ui-monospace, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 10px;
+      color: var(--mono-label);
+    }
+
+    /* slab interludes */
+    .slab {
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      margin-left: -50vw;
+      height: 60vh;
+      min-height: 380px;
+      max-height: 520px;
+      color: #ffffff;
+      overflow: hidden;
+      margin-top: 48px;
+      margin-bottom: 48px;
+      background-color: #1d4ed8;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .slab--image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.30) 0%,
+        rgba(0, 0, 0, 0.18) 30%,
+        rgba(0, 0, 0, 0.18) 70%,
+        rgba(0, 0, 0, 0.36) 100%);
+      pointer-events: none;
+    }
+    .slab .line {
+      position: absolute;
+      left: 12%;
+      max-width: 60%;
+      font-family: 'Switzer', system-ui, sans-serif;
+      color: #ffffff;
+      letter-spacing: -0.005em;
+      margin: 0;
+      z-index: 1;
+    }
+    .slab--image .line { text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35); }
+    .slab .line-top {
+      top: 11%;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.3;
+    }
+    .slab .line-bot {
+      bottom: 11%;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.3;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* mobile */
+    @media (max-width: 600px) {
+      section { padding: 56px 0; }
+      .hero { font-size: clamp(28px, 9vw, 36px); }
+      .subtitle { font-size: 16px; margin-bottom: 32px; }
+      .lede { font-size: 15px; }
+      h2.section-head { font-size: 22px; }
+      h3.sub-head { font-size: 17px; }
+      dl.meta-block {
+        grid-template-columns: 120px 1fr;
+        column-gap: 12px;
+        font-size: 10px;
+      }
+      header.site .row {
+        padding: 12px 20px;
+      }
+      header.site .name { font-size: 13px; }
+      header.site .meta { font-size: 10px; }
+      main { padding: 0 20px; }
+      .slab {
+        height: 52vh;
+        min-height: 340px;
+        max-height: 440px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
+      .slab .line { left: 8%; max-width: 80%; }
+      .slab .line-top { font-size: 14px; }
+      .slab .line-bot { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="row">
+      <div class="name">mateo acosta-rubio</div>
+      <div class="meta">MIAMI, FL · <span id="clock">--:--:-- ET</span></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- [01] WHO -->
+    <section id="who">
+      <span class="mono label">[01] WHO</span>
+
+      <h1 class="hero">building shit.</h1>
+      <p class="subtitle">mainly building clave.</p>
+
+      <p class="lede">i'm a junior at babson and a co-founder of clave, an ai platform for franchise operators. my family has run churromania for over twenty years across ten countries. clave is the tool we wish we'd had the whole time.</p>
+
+      <img class="portrait" src="images/main.jpg" alt="mateo acosta-rubio">
+
+      <span class="mono page-of">PAGE 1 OF 5</span>
+    </section>
+
+    <div class="slab">
+      <p class="line line-top">blue is my favourite colour.</p>
+      <p class="line line-bot">i like it because it is very versatile.</p>
+    </div>
+
+    <!-- [02] CURRENT WORK -->
+    <section id="current-work">
+      <span class="mono label">[02] CURRENT WORK</span>
+
+      <h2 class="section-head">clave.</h2>
+
+      <p>an ai platform for qsr franchise operators. it connects to everything operators already use, point of sale, labor, inventory, delivery, and turns it into specific actions. operators see a queue of proposals and act with one tap. no new dashboards. no new logins. just the next move.</p>
+
+      <p>i'm building it with my brother tadeo, our co-founder carlos, and our founding engineer valentina. our family ran the problem for two decades before we built the solution.</p>
+
+      <dl class="meta-block">
+        <dt>FOUNDED</dt>      <dd>MARCH 2025</dd>
+        <dt>LOCATION</dt>     <dd>MIAMI, FL</dd>
+        <dt>ROLE</dt>         <dd>CO-FOUNDER &amp; COO</dd>
+        <dt>RAISED</dt>       <dd>$1M+</dd>
+        <dt>BACKED BY</dt>    <dd>BAIN CAPITAL, HUSTLE FUND, GEEK VENTURES, TETRAD, UNTAPPED</dd>
+        <dt>LINK</dt>         <dd><a href="https://tryclave.ai">TRYCLAVE.AI →</a></dd>
+      </dl>
+
+      <span class="mono page-of">PAGE 2 OF 5</span>
+    </section>
+
+    <div class="slab slab--image" style="background-image: url('images/kareoke.JPG');">
+      <p class="line line-top">my favourite song is karaoke by roy blair.</p>
+      <p class="line line-bot">i like it because it sounds like that car ride alone after something monumental happened (both good and bad).</p>
+    </div>
+
+    <!-- [03] OTHER WORK -->
+    <section id="other-work">
+      <span class="mono label">[03] OTHER WORK</span>
+
+      <div class="block">
+        <h3 class="sub-head">stuvi</h3>
+        <p>before clave, my brother tadeo, carlos, and i built stuvi. a studio booking marketplace for musicians. we connected over a thousand artists and studios across boston and miami before it was acquired in 2025.</p>
+        <dl class="meta-block">
+          <dt>STUVI</dt>    <dd>2023 — 2025</dd>
+          <dt>ROLE</dt>     <dd>CO-FOUNDER</dd>
+          <dt>OUTCOME</dt>  <dd>ACQUIRED BY JAMMED</dd>
+        </dl>
+      </div>
+
+      <div class="slab slab--image" style="background-image: url('images/gazelle.jpg');">
+        <p class="line line-top">my favourite shoes are adidas gazelles.</p>
+        <p class="line line-bot">i like them because they are all-purpose, stylish but also functional (i've had six pairs in the last couple years).</p>
+      </div>
+
+      <div class="block">
+        <h3 class="sub-head">churromania</h3>
+        <p>the family business. 140+ stores, ten countries, two decades. i grew up in it and still work on product development. everything i know about operations started here.</p>
+        <dl class="meta-block">
+          <dt>CHURROMANIA</dt> <dd>2019 — PRESENT</dd>
+          <dt>ROLE</dt>        <dd>PRODUCT DEVELOPMENT MANAGER</dd>
+        </dl>
+      </div>
+
+      <div class="slab slab--image" style="background-image: url('images/notebook.JPG');">
+        <p class="line line-top">my favourite thing to carry with me is a pocket-sized notebook.</p>
+        <p class="line line-bot">i like it because i feel like there is always something to write down and reflect on later.</p>
+      </div>
+
+      <div class="block">
+        <h3 class="sub-head">letallgirls</h3>
+        <p>letallgirls is a nonprofit i run alongside clave. we build offline ai education devices for communities without internet, starting in south sudan. it was founded by my friend <span class="accent">didi ding mayen kuai</span>, a babson freshman from bor. she passed away unexpectedly in march of 2024, a few days after we put together the first gofundme. i took over to carry her mission forward.</p>
+        <p>this year, letallgirls won the u.s. and north american championships at the global student entrepreneur awards. in july, i represent the u.s. at the global finals in south africa.</p>
+        <dl class="meta-block">
+          <dt>LETALLGIRLS</dt> <dd>2024 — PRESENT</dd>
+          <dt>ROLE</dt>        <dd>EXECUTIVE DIRECTOR</dd>
+          <dt>PARTNERS</dt>    <dd>UNESCO, UNICEF, CARE FOUNDATION</dd>
+          <dt>LINK</dt>        <dd><a href="https://letallgirls.org">LETALLGIRLS.ORG →</a></dd>
+        </dl>
+      </div>
+
+      <span class="mono page-of">PAGE 3 OF 5</span>
+    </section>
+
+    <div class="slab slab--image" style="background-image: url('images/dog.jpg');">
+      <p class="line line-top">my favourite thing in the world is my dog.</p>
+      <p class="line line-bot">i like him because he is funny and we share many hobbies like music and sports.</p>
+    </div>
+
+    <!-- [04] ALSO -->
+    <section id="also">
+      <span class="mono label">[04] ALSO</span>
+
+      <p class="lede">i was captain of my high school soccer team and we won two rings. i started designing clothes when i was twelve and ran an e-commerce brand called dirtbrokeworld until covid killed it. before that, when i was in middle school, my best friend and i sold pink hoodies in the school hallways to raise money for breast cancer awareness. our dean shut it down. a few weeks later we learned he'd been diagnosed himself. every dollar we raised went to his gofundme. that's the first time i remember caring about building things that mattered.</p>
+
+      <span class="mono page-of">PAGE 4 OF 5</span>
+    </section>
+
+    <!-- [05] REACH -->
+    <section id="reach">
+      <span class="mono label">[05] REACH</span>
+
+      <dl class="meta-block">
+        <dt>EMAIL</dt>       <dd><a href="mailto:mateo@tryclave.ai">MATEO@TRYCLAVE.AI →</a></dd>
+        <dt>LINKEDIN</dt>    <dd><a href="https://linkedin.com/in/mateoacostarubio">/IN/MATEOACOSTARUBIO →</a></dd>
+        <dt>CLAVE</dt>       <dd><a href="https://tryclave.ai">TRYCLAVE.AI →</a></dd>
+        <dt>LETALLGIRLS</dt> <dd><a href="https://letallgirls.org">LETALLGIRLS.ORG →</a></dd>
+      </dl>
+
+      <span class="mono page-of">PAGE 5 OF 5</span>
+    </section>
+
+  </main>
+
+  <footer class="site">
+    END OF PAGE · LAST UPDATED MAY 20, 2026 · BUILT BY HAND IN MIAMI
+  </footer>
+
+  <script>
+    (function () {
+      var el = document.getElementById('clock');
+      var fmt = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+      function tick() {
+        el.textContent = fmt.format(new Date()) + ' ET';
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+</body>
+</html>
