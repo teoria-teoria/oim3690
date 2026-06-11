@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>contact</h1>
+    <p>a class exercise. testing form input types and the echo endpoint.</p>
+  </header>
+
+  <main>
+    <form action="https://oim.zhili.dev/echo/view" method="post">
+
+      <fieldset>
+        <legend>your info</legend>
+
+        <div>
+          <label for="name">full name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div>
+          <label for="email">email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="phone">phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div>
+          <label for="age">age</label>
+          <input type="number" id="age" name="age" min="13" max="120">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>your message</legend>
+
+        <div>
+          <label for="reason">reason for contact</label>
+          <select id="reason" name="reason">
+            <option value="general">general question</option>
+            <option value="feedback">feedback</option>
+            <option value="bug">found a bug</option>
+            <option value="other">other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="urgency">how urgent</label>
+          <input type="range" id="urgency" name="urgency" min="1" max="5" value="3">
+        </div>
+
+        <div>
+          <label for="preferred-date">preferred response date</label>
+          <input type="date" id="preferred-date" name="preferred-date">
+        </div>
+
+        <div>
+          <label for="color">pick a color (just because)</label>
+          <input type="color" id="color" name="color" value="#d63623">
+        </div>
+
+        <div>
+          <label for="message">your message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" name="newsletter" value="yes">
+            sign me up for the newsletter
+          </label>
+        </div>
+
+        <div>
+          <p>preferred contact method</p>
+          <label>
+            <input type="radio" name="contact-method" value="email" checked>
+            email
+          </label>
+          <label>
+            <input type="radio" name="contact-method" value="phone">
+            phone
+          </label>
+          <label>
+            <input type="radio" name="contact-method" value="text">
+            text
+          </label>
+        </div>
+      </fieldset>
+
+      <button type="submit">send</button>
+    </form>
+  </main>
+</body>
+</html>
