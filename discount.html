@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>checkout</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 4rem auto; padding: 0 1.5rem; color: #1a1a1a; }
+    h1 { font-size: 1.5rem; margin-bottom: 2rem; font-weight: 600; }
+    .row { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+    label { font-size: 0.875rem; color: #666; min-width: 90px; }
+    input[type="number"] { flex: 1; padding: 0.6rem 0.8rem; border: 1px solid #ddd; font-size: 1rem; outline: none; }
+    input[type="number"]:focus { border-color: #1a1a1a; }
+    input[type="checkbox"] { width: 18px; height: 18px; }
+    .summary { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #eee; }
+    .summary-row { display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.9rem; }
+    .total { font-weight: 600; padding-top: 0.6rem; border-top: 1px solid #eee; margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+  <h1>checkout</h1>
+
+  <div class="row">
+    <label for="total">subtotal</label>
+    <input type="number" id="total" step="0.01" value="0">
+  </div>
+
+  <div class="row">
+    <label for="member">member</label>
+    <input type="checkbox" id="member">
+  </div>
+
+  <div class="summary">
+    <div class="summary-row"><span>subtotal</span><span id="subtotalOut">$0.00</span></div>
+    <div class="summary-row"><span id="discountLabel">discount</span><span id="discountOut">$0.00</span></div>
+    <div class="summary-row total"><span>total</span><span id="finalOut">$0.00</span></div>
+  </div>
+
+  <script>
+    function getDiscount(total, isMember) {
+      if (total >= 100 && isMember) {
+        return total * 0.20;
+      } else if (total >= 100) {
+        return total * 0.10;
+      } else if (isMember) {
+        return total * 0.05;
+      } else {
+        return 0;
+      }
+    }
+
+    function getDiscountLabel(total, isMember) {
+      if (total >= 100 && isMember) return 'discount (20% member + bulk)';
+      if (total >= 100) return 'discount (10% bulk)';
+      if (isMember) return 'discount (5% member)';
+      return 'discount';
+    }
+
+    const totalInput = document.getElementById('total');
+    const memberInput = document.getElementById('member');
+    const subtotalOut = document.getElementById('subtotalOut');
+    const discountOut = document.getElementById('discountOut');
+    const finalOut = document.getElementById('finalOut');
+    const discountLabel = document.getElementById('discountLabel');
+
+    function update() {
+      const total = parseFloat(totalInput.value) || 0;
+      const isMember = memberInput.checked;
+      const discount = getDiscount(total, isMember);
+      const final = total - discount;
+
+      subtotalOut.textContent = `$${total.toFixed(2)}`;
+      discountOut.textContent = `-$${discount.toFixed(2)}`;
+      finalOut.textContent = `$${final.toFixed(2)}`;
+      discountLabel.textContent = getDiscountLabel(total, isMember);
+    }
+
+    totalInput.addEventListener('input', update);
+    memberInput.addEventListener('change', update);
+    update();
+  </script>
+</body>
+</html>

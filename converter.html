@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>converter</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 4rem auto; padding: 0 1.5rem; color: #1a1a1a; }
+    h1 { font-size: 1.5rem; margin-bottom: 2rem; font-weight: 600; }
+    .row { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+    label { font-size: 0.875rem; color: #666; min-width: 90px; }
+    input { flex: 1; padding: 0.6rem 0.8rem; border: 1px solid #ddd; font-size: 1rem; outline: none; }
+    input:focus { border-color: #1a1a1a; }
+    .note { font-size: 0.75rem; color: #888; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>celsius ↔ fahrenheit</h1>
+
+  <div class="row">
+    <label for="celsius">celsius</label>
+    <input type="number" id="celsius" step="0.1">
+  </div>
+
+  <div class="row">
+    <label for="fahrenheit">fahrenheit</label>
+    <input type="number" id="fahrenheit" step="0.1">
+  </div>
+
+  <p class="note">type in either field. the other one updates.</p>
+
+  <script>
+    const c = document.getElementById('celsius');
+    const f = document.getElementById('fahrenheit');
+
+    c.addEventListener('input', () => {
+      const val = parseFloat(c.value);
+      if (isNaN(val)) {
+        f.value = '';
+        return;
+      }
+      f.value = (val * 9 / 5 + 32).toFixed(1);
+    });
+
+    f.addEventListener('input', () => {
+      const val = parseFloat(f.value);
+      if (isNaN(val)) {
+        c.value = '';
+        return;
+      }
+      c.value = ((val - 32) * 5 / 9).toFixed(1);
+    });
+  </script>
+</body>
+</html>
